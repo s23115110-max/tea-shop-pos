@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>山丘茶舖 POS 點餐系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top">
+        <div>
+            <p class="eyebrow">Web Programming · 期中考</p>
+            <h1>山丘茶舖 POS</h1>
+        </div>
+        <p class="tagline">點餐、改數量、算總價，資料都放在陣列裡。</p>
+    </header>
+
+    <p id="message" class="message" role="status"></p>
+
+    <div class="toolbar">
+        <label class="search">
+            <span>搜尋菜單</span>
+            <input id="search-input" type="search" placeholder="輸入飲料名稱，例如：奶茶" autocomplete="off">
+        </label>
+        <div id="category-bar" class="categories">
+            <button type="button" class="active" data-category="全部">全部</button>
+            <button type="button" data-category="奶茶">奶茶</button>
+            <button type="button" data-category="純茶">純茶</button>
+            <button type="button" data-category="特調">特調</button>
+        </div>
+    </div>
+
+    <main class="layout">
+        <section class="panel">
+            <h2>今日菜單</h2>
+            <div id="menu-list">
+                <div class="item">
+                    <div>
+                        <p class="name">珍珠奶茶</p>
+                        <p class="meta">奶茶</p>
+                    </div>
+                    <p class="menu-price">55 元</p>
+                    <button type="button" class="add-btn" data-id="1">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">鮮奶茶</p>
+                        <p class="meta">奶茶</p>
+                    </div>
+                    <p class="menu-price">60 元</p>
+                    <button type="button" class="add-btn" data-id="2">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">烏龍奶茶</p>
+                        <p class="meta">奶茶</p>
+                    </div>
+                    <p class="menu-price">55 元</p>
+                    <button type="button" class="add-btn" data-id="3">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">四季春茶</p>
+                        <p class="meta">純茶</p>
+                    </div>
+                    <p class="menu-price">35 元</p>
+                    <button type="button" class="add-btn" data-id="4">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">高山青茶</p>
+                        <p class="meta">純茶</p>
+                    </div>
+                    <p class="menu-price">40 元</p>
+                    <button type="button" class="add-btn" data-id="5">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">蜜香紅茶</p>
+                        <p class="meta">純茶</p>
+                    </div>
+                    <p class="menu-price">40 元</p>
+                    <button type="button" class="add-btn" data-id="6">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">檸檬紅茶</p>
+                        <p class="meta">特調</p>
+                    </div>
+                    <p class="menu-price">45 元</p>
+                    <button type="button" class="add-btn" data-id="7">點餐</button>
+                </div>
+                <div class="item">
+                    <div>
+                        <p class="name">芒果綠茶</p>
+                        <p class="meta">特調</p>
+                    </div>
+                    <p class="menu-price">65 元</p>
+                    <button type="button" class="add-btn" data-id="8">點餐</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="order-head">
+                <h2>結帳清單</h2>
+                <p>共 <span id="item-count">0</span> 項</p>
+            </div>
+            <div id="order-list">
+                <p class="empty">目前沒有資料</p>
+            </div>
+            <div class="total-row">
+                <span>總計</span>
+                <strong><span id="total-price">0</span> 元</strong>
+            </div>
+            <button id="clear-btn" type="button" class="clear-btn">清空訂單</button>
+            <form id="custom-form" class="custom-form">
+                <h3>新增臨時品項</h3>
+                <label>
+                    品項名稱
+                    <input id="custom-name" type="text" required>
+                </label>
+                <label>
+                    價格
+                    <input id="custom-price" type="number" min="0" step="1" required>
+                </label>
+                <button type="submit">加入訂單</button>
+            </form>
+        </section>
+    </main>
+    <script src="test01.js"></script>
+</body>
+
+</html>
